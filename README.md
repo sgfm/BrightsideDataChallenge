@@ -1,39 +1,24 @@
-DATA CHALLENGE
+Brightside Data Challenge
 -
 
-Thank you for your interest in Data Science at Brightside! The next step in the process is 
-a data challenge. The goal for us is to get an understanding of how you approach and think about
-problems, and how you work with data. While the deliverable includes a machine learning model, the 
-evaluation is much deeper than that -- we care about how you're getting to that final state, your logic, 
-and your code.  
+Hello Brett,
 
-This repository has 2 years worth of Lending Club loan files stored in the data/ directory. 
-These files are quarterly, and have data on loans that Lending Club has 
-issued (date, amount, term, interest rate), metadata about the customer who took them 
-out (such as employment, annual income, FICO), and the loan status. There is a data dictionary stored
-in the docs/ directory.
+Sean here. First, Thanks for providing the data challenge it was fun.
 
-Goal: build a model that informs the user which loans they should invest in.
+The route I took with this challenge was to assume that Hardship, Settlement, and Defaults/Charge Offs were all extremly bad for 
+the creditor. I created three models that predicted each of those possibilities. I then created a script that evaluated loans and 
+only recommened loans that met a set interest rate, not-likely to default, nor settle, nor go through hardship. All three models 
+are Random Forest classifiers. All the models were trained and evaluated on undersampled data that had a 50/50 division of the 
+majority and minority (hardship, settlement, default) classes. All models attained an accuracy of over 95% on the undersampled 
+data. 
 
-Model Usage: Your goal is to inform investors on the best loans. This means: I am going to Lending Club and 
-ready to invest $100. There is a list of loans on their site (which have not
-yet been funded) that I get to choose from, and I want to know which ones are the best to invest in.
-Keep that goal in mind as you build your feature set and final solution.
+I took more of a hack-and-slash method to the cleaning phase of this challenge. Removing all features that included a missing 
+value. I corrected some of the skewed features with a logarithm or square root transformation. I made dummies of the categorical 
+data.
 
-To get started, clone this repository, make the repository you're working on private,
-and add me as a collaborator.
+If you wish to see my thought process I urge you to navigate to the notebook.ipynb file and read through.
+If you wish to see a simple way I would apply the models please navigate to main.py.
 
-There is no time limit on this challenge -- it is up to you
-to balance between taking your time and trying various methods you choose, but not
-take too long, and allow other applicants to get the chance for a final interview first.
-When you have completed the data challenge, send me an email at 
-brett.nebeker@gobrightside.com to let me know it's ready to be reviewed. You can use this 
-same email address if you have any questions. 
+All of the models are stored in the model directory. The EDA report is saved under report.html.
 
-NOTE: if you are applying for the data science analyst position, 
-the focus initially is more data analytics/visualization work. Therefore, it would
-be beneficial for you to focus more of your energy on the early stages of the data science flow
-(cleaning, EDA, etc), and less time on the modeling.
-
-Have fun!
-
+Thanks!
